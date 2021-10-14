@@ -9,14 +9,14 @@ $ yarn install
 ```
 
 ## Running the app
-You will need docker, docker-compose, and whichever docker daemon start script your init system uses, eg: docker-openrc or docker-runit.
+You will need docker, docker-compose, and whichever docker daemon start script your init system uses, eg: docker-openrc or docker-runit. This service will need to be running before the next step.
 
 Start docker in detached mode. It will download and create a dockerized postgres database automatically.
 ```bash
 $ yarn docker:start:dev:detached
 ```
 
-Create a mikro-orm schema within the dockerized database
+Create a mikro-orm schema within the dockerized database. The docker image you started in the previous step might take a bit to spin up, so if you get a "MikroORM failed to connect to database" error, give the docker container a bit more time.
 ```bash
 $ NODE_ENV=development yarn mikro-orm schema:create --run --fk-checks
 ```
