@@ -18,6 +18,7 @@ export default {
   entities: ALL_ENTITIES,
   driverOptions: {
     configuration: {
+      // This is important for testing with curl
       ssl: true,
     },
   },
