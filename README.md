@@ -5,6 +5,8 @@ A simple CRUD app using NestJS and Mikro-ORM for the good folks at Allios to rev
 ## Installation
 use the equivalent npm commands if you wish, but for sake of brevity, this README will use yarn.
 ```bash
+$ git clone https://github.com/tanner2379/allios-test
+$ cd allios-test
 $ yarn install
 ```
 
