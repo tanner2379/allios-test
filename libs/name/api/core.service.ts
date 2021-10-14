@@ -16,6 +16,11 @@ export class NamesApiCoreService {
   // Names
   //*************************************************************************************** */
 
+  public async getAllNames(): Promise<Name[]> {
+    const names = await this.nameService.findAll();
+    return names;
+  }
+
   public async getPaginatedNames(
     limit: number,
     offset: number,

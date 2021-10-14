@@ -5,6 +5,12 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./libs/database/orm/config/mikro-orm.config.ts"
+    ]
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -18,15 +24,21 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "docker:start:dev": "docker-compose -f ./tools/docker/docker-compose.dev.yml up",
+    "docker:start:dev:detached": "docker-compose -f ./tools/docker/docker-compose.dev.yml up -d"
   },
   "dependencies": {
+    "@mikro-orm/cli": "^4.5.9",
     "@mikro-orm/core": "^4.5.9",
     "@mikro-orm/nestjs": "^4.3.0",
     "@mikro-orm/postgresql": "^4.5.9",
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.0.2",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@types/dotenv": "^8.2.0",
+    "dotenv": "^10.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"

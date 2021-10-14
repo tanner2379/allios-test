@@ -30,13 +30,4 @@ export class BaseEntity {
     onUpdate: () => new Date(),
   })
   public updatedAt: Date;
-
-  /**
-   * The time at which the entity was "soft-deleted".
-   */
-
-  @Property({
-    nullable: true,
-  })
-  public archivedAt?: Date = null;
 }

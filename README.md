@@ -71,3 +71,12 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+## Use
+Get all names: 'curl -i -X GET http://localhost:3000/api/v1/names'
+Get paginated names: 'curl -i -X POST -H 'Content-Type: application/json' -d '{"limit": 5, "offset": 0}' http://localhost:3000/api/v1/names'
+Get a name by id: 'curl -i -X GET http://localhost:3000/api/v1/names/YOUR-ID'
+Create a name: 'curl -i -X POST -H 'Content-Type: application/json' -d '{"name": "YOUR-NAME"}' http://localhost:3000/api/v1/names/new'
+Edit a name: 'curl -i -X POST -H 'Content-Type: application/json' -d '{"nameId": "YOUR-ID", "name": "NEW-NAME"}' http://localhost:3000/api/v1/names/YOUR-ID/edit'
+Delete a name: 'curl -i -X POST -H 'Content-Type: application/json' -d '{}' http://localhost:3000/api/v1/names/YOUR-ID'

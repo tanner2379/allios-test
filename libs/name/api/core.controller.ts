@@ -6,8 +6,14 @@ import { NamesWithCount } from './classes';
 import { NamesApiCoreService } from './core.service';
 
 @Controller('api/v1')
-export class NameController {
+export class NamesApiCoreController {
   constructor(private readonly coreService: NamesApiCoreService) {}
+
+  @Get('names')
+  public async test(): Promise<Name[]> {
+    const names = this.coreService.getAllNames();
+    return names;
+  }
 
   @Post('names')
   public async getPaginatedNames(
@@ -21,7 +27,7 @@ export class NameController {
   }
 
   @Get('names/:id')
-  public async getNameById(@Param() id: number): Promise<Name> {
+  public async getNameById(@Param('id') id: number): Promise<Name> {
     const name = this.coreService.getNameById(id);
     return name;
   }
@@ -49,7 +55,7 @@ export class NameController {
   }
 
   @Post('names/:id')
-  public async deleteName(@Param() id: number): Promise<Name> {
+  public async deleteName(@Param('id') id: number): Promise<Name> {
     const name = this.coreService.deleteName(id);
     return name;
   }
