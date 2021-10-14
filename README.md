@@ -3,6 +3,7 @@
 A simple CRUD app using NestJS and Mikro-ORM for the good folks at Allios to review
 
 ## Installation
+use the equivalent npm commands if you wish, but for sake of brevity, this README will use yarn.
 ```bash
 $ yarn install
 ```
